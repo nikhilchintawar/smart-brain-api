@@ -13,11 +13,13 @@ const db = knex({
   client: 'pg',
   connection: {
     host : '127.0.0.1',
-    user : 'aneagoie',
-    password : '',
-    database : 'smart-brain'
+    user : 'nikhil',
+    password : 'chintawar@88',
+    database : 'smart-brain-project'
   }
 });
+
+console.log(db)
 
 const app = express();
 
