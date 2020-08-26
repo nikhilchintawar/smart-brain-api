@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
@@ -10,16 +11,14 @@ const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
 const db = knex({
-  client: 'pg',
+  client: process.env.DB_CLIENT,
   connection: {
-    host : '127.0.0.1',
-    user : 'nikhil',
-    password : 'chintawar@88',
-    database : 'smart-brain-project'
+    host : process.env.HOST,
+    user : process.env.DB_USER,
+    password : process.env.DB_PASSWORD,
+    database : process.env.DB
   }
 });
-
-console.log(db)
 
 const app = express();
 
